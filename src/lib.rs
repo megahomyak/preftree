@@ -234,5 +234,25 @@ mod tests {
                 }
             )
         );
+
+        let mut chars = "abc".chars();
+
+        tree.remove_by_shortest_prefix(&mut chars);
+
+        assert_eq!(
+            tree,
+            tree!(
+                None,
+                hashmap! {
+                    'a' => tree!(None, hashmap!{
+                        'b' => tree!(None, hashmap!{
+                            'c' => tree!(Some(3), hashmap!{}),
+                        })
+                    })
+                }
+            )
+        );
+
+        assert_eq!(chars.as_str(), "abc");
     }
 }
