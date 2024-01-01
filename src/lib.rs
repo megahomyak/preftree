@@ -2,12 +2,8 @@ use std::collections::HashMap;
 use std::hash::Hash;
 
 pub struct PrefixTree<K, V> {
-    value: Option<V>,
-    subtrees: HashMap<K, PrefixTree<K, V>>,
-}
-
-pub struct Iter<K, V> {
-
+    pub value: Option<V>,
+    pub subtrees: HashMap<K, PrefixTree<K, V>>,
 }
 
 impl<K: Hash + Eq, V> PrefixTree<K, V> {
@@ -180,14 +176,6 @@ impl<K: Hash + Eq, V> PrefixTree<K, V> {
             }
         }
         result
-    }
-
-    pub fn iter(&self) -> impl Iterator<>
-
-    pub fn iter(&self) -> impl Iterator<Item = (Vec<&K>, &V)> {
-        for key in self.subtrees.iter() {
-
-        }
     }
 }
 
