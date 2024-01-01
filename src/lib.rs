@@ -211,8 +211,9 @@ mod tests {
         };
     }
 
+    /// I think that these tests are sufficient
     #[test]
-    fn deletion() {
+    fn test_prefix_tree() {
         let mut tree = PrefixTree::new();
 
         tree.insert("".chars(), 1);
